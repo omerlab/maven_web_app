@@ -1,0 +1,43 @@
+pipeline{
+
+agent any
+
+tools{
+maven 'maven3.8.2'
+
+
+stages{
+
+  stage('CheckOutCode'){
+    steps{
+  
+    }
+  }
+  
+  stage('Build'){
+  steps{
+   echo 'build the application'
+  }
+  }
+
+ stage('ExecuteSonarQubeReport'){
+  steps{
+   echo 'test the application'
+  }
+  }
+  
+  stage('UploadArtifactsIntoNexus'){
+  steps{
+   echo 'deploy the application'
+  }
+  }
+  
+  stage('DeployAppIntoTomcat'){
+  steps{
+    echo '' 
+  }
+  }
+  }
+  
+}
+
